@@ -33,7 +33,7 @@ class UI {
     // 初始化商品信息
     let goodsList_html = ''
     this.uiData.UIGoodsArr.map((item, index) => {
-      goodsList_html += `<div class="goods-item" id='item${index}'>
+      goodsList_html += `<div class="goods-item" index='${index}'>
       <img src="${item.goods.pic}" alt="" class="goods-pic" />
       <div class="goods-info">
         <h2 class="goods-title">${item.goods.title}</h2>
@@ -172,15 +172,16 @@ class UI {
   }
 
   swithMenu(index) {
-    console.log(typeof `#${index}`);
     if (this.doms.menu.children[index].classList.contains('active')) {
       return
     }
     const active = this.doms.menu.querySelector('.active')
     active.classList.remove('active')
     this.doms.menu.children[index].classList.add('active')
-    console.log(this.doms.goodsContainer.querySelector(`#item${index}`));
-    this.doms.goodsContainer.querySelector(`#item${index}`).scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+    // 导航至指定位置
+    const targetItem = this.doms.goodsContainer.querySelector(`div[index='${index}']`)
+    targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }
 
