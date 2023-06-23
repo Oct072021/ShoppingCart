@@ -179,9 +179,14 @@ class UI {
     active.classList.remove('active')
     this.doms.menu.children[index].classList.add('active')
 
-    // 导航至指定位置
-    const targetItem = this.doms.goodsContainer.querySelector(`div[from='${index}']`)
-    targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // 可能对应菜单内暂没有商品数据
+    try {
+      // 导航至指定位置
+      const targetItem = this.doms.goodsContainer.querySelector(`div[from='${index}']`)
+      targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } catch (error) {
+      console.log('暂无对应商品哦！')
+    }
   }
 }
 
