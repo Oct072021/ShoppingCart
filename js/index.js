@@ -4,7 +4,6 @@ const ui = new UI()
 
 // 新增/减少商品
 ui.doms.goodsContainer.addEventListener('click', (e) => {
-  console.log(e.target);
   const index = +e.target.getAttribute('index')
   if (e.target.classList.contains('i-jiajianzujianjiahao')) {
     ui.increase(index)
@@ -22,6 +21,6 @@ ui.doms.menu.addEventListener('click', (e) => {
 // 当前商品对应的菜单
 ui.doms.goodsContainer.addEventListener('wheel', (e) => {
   const topElem = document.elementFromPoint(100, 10)
-  const index = topElem.getAttribute('index')
-  ui.swithMenu(index)
+  const from = topElem.getAttribute('from')
+  ui.swithMenu(from)
 })

@@ -33,7 +33,7 @@ class UI {
     // 初始化商品信息
     let goodsList_html = ''
     this.uiData.UIGoodsArr.map((item, index) => {
-      goodsList_html += `<div class="goods-item" index='${index}'>
+      goodsList_html += `<div class="goods-item" from='${item.goods.from}'>
       <img src="${item.goods.pic}" alt="" class="goods-pic" />
       <div class="goods-info">
         <h2 class="goods-title">${item.goods.title}</h2>
@@ -180,7 +180,7 @@ class UI {
     this.doms.menu.children[index].classList.add('active')
 
     // 导航至指定位置
-    const targetItem = this.doms.goodsContainer.querySelector(`div[index='${index}']`)
+    const targetItem = this.doms.goodsContainer.querySelector(`div[from='${index}']`)
     targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }

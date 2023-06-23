@@ -12,6 +12,7 @@ const goods = [
     sellNumber: 200,
     favorRate: 95,
     price: 32,
+    from: 0,
   },
   {
     pic: './assets/g2.png',
@@ -24,6 +25,7 @@ const goods = [
     sellNumber: 1000,
     favorRate: 100,
     price: 19.9,
+    from: 0,
   },
   {
     pic: './assets/g3.png',
@@ -34,6 +36,7 @@ const goods = [
     sellNumber: 200,
     favorRate: 93,
     price: 20.3,
+    from: 0,
   },
   {
     pic: './assets/g4.png',
@@ -44,6 +47,7 @@ const goods = [
     sellNumber: 17,
     favorRate: 80,
     price: 38,
+    from: 1,
   },
   {
     pic: './assets/g5.png',
@@ -58,6 +62,7 @@ const goods = [
     sellNumber: 50,
     favorRate: 90,
     price: 21.12,
+    from: 1,
   },
   {
     pic: './assets/g6.png',
@@ -70,6 +75,7 @@ const goods = [
     sellNumber: 55,
     favorRate: 86,
     price: 26.3,
+    from: 2,
   },
   {
     pic: './assets/g7.png',
@@ -82,6 +88,7 @@ const goods = [
     sellNumber: 45,
     favorRate: 89,
     price: 18.8,
+    from: 2,
   },
   {
     pic: './assets/g8.png',
@@ -94,6 +101,7 @@ const goods = [
     sellNumber: 72,
     favorRate: 95,
     price: 29.9,
+    from: 3,
   },
   {
     pic: './assets/g9.png',
@@ -106,6 +114,7 @@ const goods = [
     sellNumber: 23,
     favorRate: 94,
     price: 18.8,
+    from: 4,
   },
   {
     pic: './assets/g10.png',
@@ -118,6 +127,7 @@ const goods = [
     sellNumber: 87,
     favorRate: 98,
     price: 25.6,
+    from: 5,
   },
 ]
 
