@@ -14,7 +14,8 @@ class UI {
       footerPay: document.querySelector(".footer-pay"),
       footerPayInnerSpan: document.querySelector(".footer-pay span"),
       footerCar: document.querySelector('.footer-car'),
-      badge: document.querySelector('.footer-car-badge')
+      badge: document.querySelector('.footer-car-badge'),
+      menu: document.querySelector('.menu')
     }
 
     const carRect = this.doms.footerCar.getBoundingClientRect()
@@ -29,9 +30,10 @@ class UI {
   }
 
   createHTML() {
-    let html = ''
+    // 初始化商品信息
+    let goodsList_html = ''
     this.uiData.UIGoodsArr.map((item, index) => {
-      html += `<div class="goods-item">
+      goodsList_html += `<div class="goods-item">
       <img src="${item.goods.pic}" alt="" class="goods-pic" />
       <div class="goods-info">
         <h2 class="goods-title">${item.goods.title}</h2>
@@ -54,7 +56,26 @@ class UI {
       </div>
     </div>`
     })
-    this.doms.goodsContainer.innerHTML = html
+    this.doms.goodsContainer.innerHTML = goodsList_html
+
+    // 初始化菜单栏信息
+    let frag = document.createDocumentFragment()
+    menu.map((item, index) => {
+      const div = document.createElement('div')
+      div.classList.add('menu-item')
+      div.setAttribute('index', index) // 添加下标
+      if (index === 0) {
+        div.classList.add('active')
+      }
+
+      const span = document.createElement('span')
+      span.textContent = item
+      span.setAttribute('index', index) // 添加下标
+
+      div.appendChild(span)
+      frag.appendChild(div)
+    })
+    this.doms.menu.appendChild(frag)
   }
 
   listenEvent() {
@@ -148,6 +169,16 @@ class UI {
       div.remove()
       this.carAnimate()
     }, { once: true })
+  }
+
+  swithMenu(index) {
+    console.log(index);
+    if (this.doms.menu.children[index].classList.contains('active')) {
+      return
+    }
+    const active = this.doms.menu.querySelector('.active')
+    active.classList.remove('active')
+    this.doms.menu.children[index].classList.add('active')
   }
 }
 
