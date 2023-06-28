@@ -33,14 +33,14 @@ class UIData {
 
     // map写法
     this.UIGoodsArr.map(item => {
-      sum += item.getTotalPrice()
+      sum += item.TotalPrice
     })
 
     return sum
   }
 
   isChoose(index) {
-    return this.UIGoodsArr[index].isChoose()
+    return this.UIGoodsArr[index].isChoose
   }
 
   increase(index) {

@@ -6,15 +6,50 @@
 class UIGoods {
 
   constructor(g) {
-    this.goods = g
-    this.choose = 0
+    // 标准写法
+    // this.goods = g
+    // this.choose = 0
+
+    // 使用属性描述符
+    Object.defineProperty(this, 'goods', {
+      configurable: false,
+      get: function () {
+        return g
+      },
+      set: function () {
+        throw new Error('goods属性只可读，不可修改')
+      }
+    })
+
+    let internalChooseVal = 0
+    Object.defineProperty(this, 'choose', {
+      configurable: false,
+      get: function () {
+        return internalChooseVal
+      },
+      set: function (val) {
+        if (typeof val !== 'number') {
+          throw new Error('choose属性必须为数字')
+        }
+        if (parseInt(val) !== val) {
+          throw new Error('choose属性必须为整数')
+        }
+        if (val < 0) {
+          throw new Error('choose属性必须 >= 0')
+        }
+        internalChooseVal = val
+      }
+    })
   }
 
-  getTotalPrice() {
+  // ES6语法，与defineProperty同理
+  // 把totalPrice变为属性
+  get TotalPrice() {
     return this.goods.price * this.choose
   }
 
-  isChoose() {
+  // 同理，isChoose变为属性
+  get isChoose() {
     return this.choose > 0
   }
 
