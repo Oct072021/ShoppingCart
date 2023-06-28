@@ -15,6 +15,7 @@
   padding-left: 175rem;
   position: relative;
 }
+
 .footer-car {
   position: absolute;
   width: 118rem;
@@ -29,6 +30,7 @@
   align-items: center;
   font-size: 60rem;
 }
+
 .footer-car-badge {
   position: absolute;
   width: 35rem;
@@ -42,12 +44,15 @@
   top: 0;
   display: none;
 }
+
 .footer-car.active {
   background: #4a90e1;
 }
+
 .footer-car.active .footer-car-badge {
   display: block;
 }
+
 .footer-car.animate {
   animation: footer-car-animate 500ms ease-in-out;
 }
@@ -56,15 +61,19 @@
   0% {
     transform: scale(1);
   }
+
   25% {
     transform: scale(0.8);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   75% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
@@ -75,10 +84,12 @@
   display: flex;
   margin-top: 5rem;
 }
+
 .footer-car-tip {
   font-size: 20rem;
   margin-left: 6rem;
 }
+
 .footer-pay {
   background: #535356;
   width: 250rem;
@@ -86,23 +97,29 @@
   line-height: 100rem;
   text-align: center;
 }
-.footer-pay > * {
+
+.footer-pay>* {
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .footer-pay a {
   display: none;
 }
+
 .footer-pay span {
   font-size: 30rem;
 }
+
 .footer-pay.active {
   background: #76d572;
 }
+
 .footer-pay.active a {
   display: block;
 }
+
 .footer-pay.active span {
   display: none;
 }
