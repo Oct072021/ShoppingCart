@@ -185,7 +185,7 @@ class UI {
       const targetItem = this.doms.goodsContainer.querySelector(`div[from='${index}']`)
       targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } catch (error) {
-      console.log('暂无对应商品哦！')
+      throw new Error('暂无对应商品哦！')
     }
   }
 }
