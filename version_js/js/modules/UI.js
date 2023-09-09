@@ -15,7 +15,9 @@ class UI {
       footerPayInnerSpan: document.querySelector(".footer-pay span"),
       footerCar: document.querySelector('.footer-car'),
       badge: document.querySelector('.footer-car-badge'),
-      menu: document.querySelector('.menu')
+      menu: document.querySelector('.menu'),
+      pay: document.querySelector('.footer-pay a'),
+      collection:document.querySelector('dialog')
     }
 
     const carRect = this.doms.footerCar.getBoundingClientRect()
@@ -172,6 +174,7 @@ class UI {
   }
 
   swithMenu(index) {
+    console.log(index);
     if (this.doms.menu.children[index].classList.contains('active')) {
       return
     }

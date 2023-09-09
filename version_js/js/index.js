@@ -1,4 +1,4 @@
-import { UI } from "./class/UI.js"
+import { UI } from './modules/UI.js'
 
 const ui = new UI()
 
@@ -23,4 +23,9 @@ ui.doms.goodsContainer.addEventListener('wheel', (e) => {
   const topElem = document.elementFromPoint(100, 10)
   const from = topElem.getAttribute('from')
   ui.swithMenu(from)
+})
+
+ui.doms.pay.addEventListener('click', (e) => {
+  const dialog = ui.doms.collection
+  dialog.showModal()
 })
