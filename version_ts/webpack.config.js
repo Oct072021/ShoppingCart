@@ -54,13 +54,34 @@ module.exports = {
         // 要排除的文件
         exclude: /node-modules/,
       },
+
+      // 处理scss文件
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            // 配置postcss    兼容更多浏览器
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ['postcss-preset-env', { browsers: 'last 2 versions' }],
+                ],
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
     ],
   },
 
   // 配置webpack插件
   plugins: [
     new HTMLWebpackPlugin({
-      title: 'demo',
+      template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
   ],

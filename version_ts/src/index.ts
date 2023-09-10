@@ -1,0 +1,5 @@
+import './style/add-to-car.scss'
+import './style/collection.scss'
+import './style/common.scss'
+import './style/container.scss'
+import './style/footer.scss'
