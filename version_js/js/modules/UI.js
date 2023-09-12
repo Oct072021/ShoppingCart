@@ -32,7 +32,7 @@ class UI {
   }
 
   createHTML() {
-    // 初始化商品信息
+    // 初始化商品信息--传统写法
     let goodsList_html = ''
     this.uiData.UIGoodsArr.map((item, index) => {
       goodsList_html += `<div class="goods-item" from='${item.goods.from}'>
@@ -60,7 +60,7 @@ class UI {
     })
     this.doms.goodsContainer.innerHTML = goodsList_html
 
-    // 初始化菜单栏信息
+    // 初始化菜单栏信息--frag写法
     let frag = document.createDocumentFragment()
     menu.map((item, index) => {
       const div = document.createElement('div')

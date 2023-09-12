@@ -155,11 +155,9 @@
         }
       }
 
-      &.active {
-        span {
-          display: block;
-        }
+      &.active .goods-info .goods-confirm .goods-btns {
 
+        span,
         .i-jianhao {
           display: block;
         }

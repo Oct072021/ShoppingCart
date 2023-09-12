@@ -58,10 +58,11 @@ class UIGoods {
   }
 
   decrease() {
-    if (this.choose === 0) {
-      return
-    }
-    this.choose--
+    // if (this.choose === 0) {
+    //   return
+    // }
+    // this.choose--
+    this.choose > 0 && this.choose--  // 二元表达式简写
   }
 }
 

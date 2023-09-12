@@ -66,14 +66,38 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  ['postcss-preset-env', { browsers: 'last 2 versions' }],
-                ],
+                plugins: [['postcss-preset-env', { browsers: 'last 2 versions' }]],
               },
             },
           },
           'sass-loader',
         ],
+      },
+
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+
+      // 处理图片
+      {
+        test: /\.(jpg|png)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8 * 1024,
+              esModule: false,
+            },
+          },
+        ],
+      },
+
+      {
+        // 对img标签路径进行处理
+        test: /\.html$/,
+        // html-loader使用common.js规范对img标签路径进行处理
+        loader: 'html-withimg-loader',
       },
     ],
   },
@@ -82,6 +106,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './src/index.html',
+      // limit: 8 * 1024,
     }),
     new CleanWebpackPlugin(),
   ],

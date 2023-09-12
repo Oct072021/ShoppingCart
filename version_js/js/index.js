@@ -2,7 +2,7 @@ import { UI } from './modules/UI.js'
 
 const ui = new UI()
 
-// 新增/减少商品
+// 添加/移除到购物车
 ui.doms.goodsContainer.addEventListener('click', (e) => {
   const index = +e.target.getAttribute('index')
   if (e.target.classList.contains('i-jiajianzujianjiahao')) {

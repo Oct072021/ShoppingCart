@@ -1,8 +1,8 @@
-import Goods from './data.d'
+import {Goods} from './data.d'
 
 const goods: Array<Goods> = [
   {
-    pic: './assets/g1.png',
+    pic: 'g1',
     title: '椰云拿铁',
     desc: `1人份【年度重磅，一口吞云】
     √原创椰云topping，绵密轻盈到飞起！
@@ -17,7 +17,7 @@ const goods: Array<Goods> = [
     from: 0,
   },
   {
-    pic: './assets/g2.png',
+    pic: 'g2',
     title: '生椰拿铁',
     desc: `1人份【YYDS，无限回购】
     现萃香醇Espresso，遇见优质冷榨生椰浆，椰香浓郁，香甜清爽，带给你不一样的拿铁体验！
@@ -30,7 +30,7 @@ const goods: Array<Goods> = [
     from: 0,
   },
   {
-    pic: './assets/g3.png',
+    pic: 'g3',
     title: '加浓 美式',
     desc: `1人份【清醒加倍，比标美多一份Espresso】
     口感更佳香醇浓郁，回味持久
@@ -41,7 +41,7 @@ const goods: Array<Goods> = [
     from: 0,
   },
   {
-    pic: './assets/g4.png',
+    pic: 'g4',
     title: '瓦尔登蓝钻瑞纳冰',
     desc: `1人份【爆款回归！蓝色治愈力量】
     灵感来自下澄明、碧蓝之境---瓦尔登湖。含藻蓝蛋白，梦幻蓝色源自天然植物成分，非人工合成色素，融入人气冷榨生椰浆，椰香浓郁，清冽冰爽；底部添加Q弹小料，0脂原味晶球，光泽剔透，如钻石般blingbling。搭配奶油顶和彩虹色棉花糖，满足你的少女心～
@@ -52,7 +52,7 @@ const goods: Array<Goods> = [
     from: 1,
   },
   {
-    pic: './assets/g5.png',
+    pic: 'g5',
     title: '椰云精萃美式',
     desc: `1人份【不用吸管 大口吞云！】
 
@@ -67,7 +67,7 @@ const goods: Array<Goods> = [
     from: 1,
   },
   {
-    pic: './assets/g6.png',
+    pic: 'g6',
     title: '焦糖咖啡星冰乐',
     desc: `1人份【细腻醇香！】
 
@@ -80,7 +80,7 @@ const goods: Array<Goods> = [
     from: 2,
   },
   {
-    pic: './assets/g7.png',
+    pic: 'g7',
     title: '焦糖咖啡星冰乐',
     desc: `1人份【细腻醇香！】
 
@@ -93,7 +93,7 @@ const goods: Array<Goods> = [
     from: 2,
   },
   {
-    pic: './assets/g8.png',
+    pic: 'g8',
     title: '摩卡可可碎片星冰乐',
     desc: `1人份【浓郁醇香！】
 
@@ -106,7 +106,7 @@ const goods: Array<Goods> = [
     from: 3,
   },
   {
-    pic: './assets/g9.png',
+    pic: 'g9',
     title: '红茶拿铁',
     desc: `1人份【茶瓦纳™】
 
@@ -119,7 +119,7 @@ const goods: Array<Goods> = [
     from: 4,
   },
   {
-    pic: './assets/g10.png',
+    pic: 'g10',
     title: '卡布奇诺',
     desc: `1人份【手工调制浓缩咖啡！】
 
@@ -149,4 +149,4 @@ const menu: Array<string> = [
   '热卖套餐',
 ]
 
-export default { goods, menu }
+export { goods, menu }
