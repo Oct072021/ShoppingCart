@@ -9,32 +9,32 @@ import UI from './modules/UI'
 const ui = new UI()
 
 // 添加/移除到购物车
-ui.doms.goodsContainer.addEventListener('click', (e) => {
-  const target: HTMLElement = e.target as HTMLElement
-  const index: number = +target.getAttribute('index')!
+ui.doms.goodsContainer.addEventListener('click', e => {
+	const target: HTMLElement = e.target as HTMLElement
+	const index: number = +target.getAttribute('index')!
 
-  if (target.classList.contains('i-jiajianzujianjiahao')) {
-    ui.increase(index)
-  } else if (target.classList.contains('i-jianhao')) {
-    ui.decrease(index)
-  }
+	if (target.classList.contains('i-jiajianzujianjiahao')) {
+		ui.increase(index)
+	} else if (target.classList.contains('i-jianhao')) {
+		ui.decrease(index)
+	}
 })
 
 // 菜单导航
-ui.doms.menu.addEventListener('click', (e) => {
-  const target: HTMLElement = e.target as HTMLElement
-  const index: number = +target.getAttribute('index')!
-  ui.swithMenu(index)
+ui.doms.menu.addEventListener('click', e => {
+	const target: HTMLElement = e.target as HTMLElement
+	const index: number = +target.getAttribute('index')!
+	ui.swithMenu(index)
 })
 
 // 当前商品对应的菜单
-ui.doms.goodsContainer.addEventListener('wheel', (e) => {
-  const topElem: HTMLElement = document.elementFromPoint(100, 10) as HTMLElement
-  const from: number = +topElem.getAttribute('from')!
-  ui.swithMenu(from)
+ui.doms.goodsContainer.addEventListener('wheel', e => {
+	const topElem: HTMLElement = document.elementFromPoint(100, 10) as HTMLElement
+	const from: number = +topElem.getAttribute('from')!
+	ui.swithMenu(from)
 })
 
-ui.doms.pay.addEventListener('click', (e) => {
-  const dialog: HTMLDialogElement = ui.doms.collection as HTMLDialogElement
-  dialog.showModal()
+ui.doms.pay.addEventListener('click', e => {
+	const dialog: HTMLDialogElement = ui.doms.collection as HTMLDialogElement
+	dialog.showModal()
 })
