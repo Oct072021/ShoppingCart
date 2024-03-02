@@ -10,7 +10,7 @@ module.exports = {
 		//  指定打包目录
 		path: path.resolve(__dirname, 'dist'),
 		// 打包后的文件
-		filename: 'static/js/bundle.js',
+		filename: 'static/js/index.js',
 		clean: true
 	},
 
@@ -88,15 +88,6 @@ module.exports = {
 						maxSize: 8 * 1024
 					}
 				},
-				// use: [
-				// 	{
-				// 		loader: 'url-loader',
-				// 		options: {
-				// 			limit: 8 * 1024,
-				// 			esModule: false
-				// 		}
-				// 	}
-				// ]
 				generator: {
 					filename: 'static/images/[hash][ext][query]'
 				}
@@ -124,5 +115,5 @@ module.exports = {
 		extensions: ['.ts', '.js']
 	},
 
-	mode: 'development'
+	mode: 'production'
 }
