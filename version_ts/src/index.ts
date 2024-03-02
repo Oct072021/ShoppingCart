@@ -29,7 +29,8 @@ ui.doms.menu.addEventListener('click', e => {
 
 // 当前商品对应的菜单
 ui.doms.goodsContainer.addEventListener('wheel', e => {
-	const topElem: HTMLElement = document.elementFromPoint(100, 10) as HTMLElement
+	const width = document.documentElement.clientWidth
+	const topElem: HTMLElement = document.elementFromPoint(width - 10, 0) as HTMLElement
 	const from: number = +topElem.getAttribute('from')!
 	ui.swithMenu(from)
 })
