@@ -19,7 +19,7 @@ ui.doms.menu.addEventListener('click', e => {
 })
 
 // 当前商品对应的菜单
-ui.doms.goodsContainer.addEventListener('wheel', e => {
+ui.doms.goodsContainer.addEventListener('scroll', e => {
 	const width = document.documentElement.clientWidth
 	const topElem = document.elementFromPoint(width - 10, 10)
 	const from = topElem.getAttribute('from')
